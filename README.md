@@ -1,36 +1,43 @@
-# React + TypeScript + Vite
+# React,TS 개인 프로젝트
+- [Website](https://community-week-3.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## ⏰ 개발 기간
+- 2024.01.29 ~ 2023.02.19
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## 🖥️ 프로젝트 소개
+- 팀스파르타의 콘텐츠팀 체험형 인턴 업무로 수강생들에게 제공될 커뮤니티 프로젝트의 데모페이지
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ 화면 구성
+### Home
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- 전체 게시글을 확인할 수 있으며 작성할 수 있다.
+- 게시글 작성은 텍스트 편집기로 구현되었으며, 이미지와 비디오 첨부가 가능하다.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# commerce-week-1
-# community-week-1
-# community-week-1
-# community-week-2
-# community-week-3
-# community-project
+### 둘러보기
+
+- 커뮤니티에 가입된 유저들을 조회활 수 있으며, 검색이 가능하다.
+- 유저 카드 클릭을 통해 해당 유저 페이지로 접속이 가능하다.
+- 유저 페이지에서는 팔로우/언팔로우 및 팔로우 정보를 확인할 수 있다.
+
+### 마이페이지
+
+- 나의 프로필 이미지, 닉네임, 자기소개 팔로우 정보를 확인 및 수정할 수 있다.
+- 구글 로그인이 아닌 이메일 회원가입의 경우 비밀번호 변경이 가능하다.
+
+## 개발 환경 / 기술스택
+
+- Vite
+- Typescript
+- React
+- Context API
+- Tanstack Query
+- Tailwind CSS
+- shadcn/ui
+- Firebase
+  - realtime database 
+  - storage
+  - auth
+
