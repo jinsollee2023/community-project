@@ -42,7 +42,8 @@ const GoogleLogin = ({
   const scriptNodeRef = useRef<HTMLScriptElement>(null!);
   const [isSdkLoaded, setIsSdkLoaded] = useState(false);
   const [instance, setInstance] = useState<any>(null!);
-  const redirect_uri = "https://community-week-3.vercel.app/auth";
+  const redirect_uri = "https://community-project-js.vercel.app/auth";
+  // const redirect_uri = "http://localhost:5173/auth";
 
   useEffect(() => {
     !isSdkLoaded && load();

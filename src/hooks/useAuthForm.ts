@@ -132,6 +132,7 @@ const useAuthForm = () => {
           email,
           password
         );
+        onAuthenticationSuccess();
         const imageDownloadURL = await storageAPI.uploadProfileImage(
           user.uid,
           image as File
@@ -141,7 +142,6 @@ const useAuthForm = () => {
           photoURL: imageDownloadURL,
         });
         await addUser(values, user.uid, imageDownloadURL);
-        onAuthenticationSuccess();
       } catch (error) {
         console.log(error);
         toast({

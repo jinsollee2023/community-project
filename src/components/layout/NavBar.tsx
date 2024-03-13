@@ -11,7 +11,7 @@ const NavBar = () => {
   const path = location.pathname;
   const { toast } = useToast();
 
-  const [user, loading] = useAuthState(auth);
+  const [user, _] = useAuthState(auth);
   const userId = localStorage.getItem("userId") || user?.uid;
 
   const logButtonHandler = async () => {
@@ -33,7 +33,7 @@ const NavBar = () => {
         <span className="cursor-pointer" onClick={() => navigate("/")}>
           Logo
         </span>
-        {!loading && userId ? (
+        {userId ? (
           <div className="space-x-2">
             <Button
               className={`${path === "/" ? "hidden" : "none"} hidden sm:inline`}
@@ -57,16 +57,14 @@ const NavBar = () => {
             <Button onClick={logButtonHandler}>로그아웃</Button>
           </div>
         ) : (
-          !loading && (
-            <Button
-              className={
-                path === "/login" || path === "/sign-up" ? "hidden" : "none"
-              }
-              onClick={logButtonHandler}
-            >
-              로그인
-            </Button>
-          )
+          <Button
+            className={
+              path === "/login" || path === "/sign-up" ? "hidden" : "none"
+            }
+            onClick={logButtonHandler}
+          >
+            로그인
+          </Button>
         )}
       </nav>
     </div>

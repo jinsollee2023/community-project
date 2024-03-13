@@ -2,12 +2,10 @@ import { IUser } from "@/types/types";
 import { useMutation } from "@tanstack/react-query";
 import { queryClient } from "@/App";
 import { useUser } from "@/store/UserContext";
-import { useNavigate } from "react-router-dom";
 import { userAPI } from "@/lib/api/userAPI";
 
 const useUserMutations = () => {
   const { setUser } = useUser();
-  const navigate = useNavigate();
 
   const addUserMutation = useMutation({
     mutationFn: async (newUser: IUser) => {
@@ -26,8 +24,8 @@ const useUserMutations = () => {
       }
       return { previousUser, newUser: value };
     },
-    onSuccess: () => {
-      navigate("/");
+    onSuccess: (value) => {
+      localStorage.setItem("userId", value?.userId as string);
     },
     onError: (error, _, context) => {
       queryClient.setQueryData(["user", context?.newUser.id], undefined);

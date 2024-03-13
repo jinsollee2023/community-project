@@ -31,8 +31,8 @@ export const PrivateRoute = (): React.ReactElement => {
 
 export const PublicRoute = (): React.ReactElement => {
   const { toast } = useToast();
-  const [user] = useAuthState(auth);
-  const userId = localStorage.getItem("userId") || user?.uid;
+  const [user, _] = useAuthState(auth);
+  const userId = user?.uid;
 
   const userCheck = (userId: any | null): boolean => {
     if (userId) {

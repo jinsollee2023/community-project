@@ -9,16 +9,6 @@ export interface IUser {
   updatedAt: Date;
 }
 
-export interface IGoogleUser {
-  email: string;
-  given_name: string;
-  id: string;
-  locale: string;
-  name: string;
-  picture: string;
-  verified_email: boolean;
-}
-
 //팔로워가 누군가를 팔로잉한다
 export interface IFollow {
   id: string;
